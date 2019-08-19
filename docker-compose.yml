@@ -1,0 +1,13 @@
+version: '3'
+services:
+  openresty:
+    image: openresty/openresty:alpine
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    ports:
+      - 8080:8080
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
