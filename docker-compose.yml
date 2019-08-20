@@ -1,9 +1,10 @@
 version: '3'
 services:
   openresty:
-    image: openresty/openresty:alpine
+    image: openresty/openresty:stretch
     volumes:
       - ./conf.d:/etc/nginx/conf.d
+      - ./lua:/etc/nginx/lua
     ports:
       - 8080:8080
   redis:
